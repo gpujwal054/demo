@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/header :: head">
+	<meta charset="UTF-8">
+	<title>Home</title>
+</head>
+<body>
+<header th:replace="fragments/navbar :: navbar"></header>
+<div id="page" layout:fragment="content" style="margin:50px">
+	<p>Hello</p>
+</div>
+<footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>

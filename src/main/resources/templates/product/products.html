@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="layout/default">
+
+<body>
+<div id="page" layout:fragment="content">
+	<div th:if="${not #lists.isEmpty(products)}">
+		<h2>Product List</h2>
+		<table class="table table-striped">
+			<tr>
+				<th>Id</th>
+				<th>Product Name</th>
+				<th>Description</th>
+				<th>Price</th>
+				<th>View</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+			<tr th:each="product : ${products}">
+				<td th:text="${product.id}"><a href="/product/${product.id}">Id</a></td>
+				<td th:text="${product.productName}">Product Name</td>
+				<td th:text="${product.description}">Description</td>
+				<td th:text="${product.price}">Price</td>
+				<td><a th:href="${ '/product/' + product.id}">View</a></td>
+				<td><a th:href="${'/product/edit/' + product.id}">Edit</a></td>
+				<td><a th:href="${'/product/delete' + product.id}">Delete</a></td>
+			</tr>
+		</table>
+
+	</div>
+	<script>
+        $(document).ready(function () {
+            //   alert("test");
+        });
+    </script>
+
+</div>
+</body>
+</html>

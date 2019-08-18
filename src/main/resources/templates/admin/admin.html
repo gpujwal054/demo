@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/header :: head">
+	<meta charset="UTF-8">
+	<title>Admin</title>
+</head>
+<body>
+<header th:replace="fragments/navbar :: navbar"></header>
+<div style="margin:50px">
+	<div layout:fragment="content">
+		<p><a href="/product/new" style="font-size=44sp">Insert Product</a></p>
+		<p><a href="product/{id}">Show Product</a></p>
+	</div>
+</div>
+<footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>
